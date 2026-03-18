@@ -1,11 +1,7 @@
-#![allow(unused)]
 
-use {
-    fake::Dummy,
-    serde::{Deserialize, Serialize},
-};
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 #[serde(rename_all = "lowercase")]
 pub enum Unit {
     Linear,
@@ -17,23 +13,4 @@ pub enum Unit {
     Seconds,
     Beats,
     Bpm,
-}
-
-#[cfg(test)]
-mod tests {
-    use {super::Unit, std::error::Error};
-
-    use quick_xml::se::to_string;
-
-    #[test]
-    pub fn se_test() -> Result<(), Box<dyn Error>> {
-        let mut o: Unit = Unit::Beats;
-
-        match to_string(&o) {
-            Ok(o) => println!("{}", o),
-            Err(err) => return Err(err.into()),
-        }
-
-        Ok(())
-    }
 }

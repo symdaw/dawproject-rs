@@ -1,14 +1,11 @@
-#![allow(unused)]
+
+use crate::api::FileReference;
 
 use super::{time_unit::TimeUnit, timeline::TimeLine, UpcastTimeline};
 
-use {
-    super::{super::add_one_get, super::fake_rng, super::file_reference::FileReference},
-    fake::{Dummy, Fake, Faker},
-    serde::{Deserialize, Serialize},
-};
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Audio {
     #[serde(rename = "@id")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -34,7 +31,6 @@ pub struct Audio {
     #[serde(rename = "@duration")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub duration: Option<f64>,
-
     #[serde(rename = "@algorithm")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub algorithm: Option<String>,
@@ -44,58 +40,3 @@ pub struct Audio {
     pub sample_rate: i32,
 }
 
-impl Audio {
-    pub fn new_test(relative_path: String, sample_rate: i32, channels: i32, duration: f64) -> Self {
-        Self {
-            id: Some(format!("id_{}", add_one_get())),
-            name: None,
-            color: None,
-            comment: None,
-            track: None,
-            time_unit: None,
-            files_sequence: Some(vec![FileReference {
-                path: relative_path,
-                external: None,
-            }]),
-            duration: Some(duration),
-            algorithm: None,
-            channels,
-            sample_rate,
-        }
-    }
-
-    pub fn new_fake() -> Self {
-        let o: Self = Faker.fake_with_rng(&mut fake_rng());
-        o
-    }
-}
-
-impl UpcastTimeline for Audio {
-    fn upcast(&self) -> TimeLine {
-        TimeLine {
-            id: self.id.clone(),
-            name: self.name.clone(),
-            color: self.color.clone(),
-            comment: self.comment.clone(),
-            track: self.track.clone(),
-            time_unit: self.time_unit.clone(),
-        }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use {super::Audio, quick_xml::se::to_string, std::error::Error};
-
-    #[test]
-    pub fn se_test() -> Result<(), Box<dyn Error>> {
-        let mut o = Audio::new_test("test".to_string(), 44100, 2, 1.0);
-
-        match to_string(&o) {
-            Ok(o) => println!("{}", o),
-            Err(err) => return Err(err.into()),
-        }
-
-        Ok(())
-    }
-}

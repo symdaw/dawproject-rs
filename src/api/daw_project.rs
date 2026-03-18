@@ -1,4 +1,3 @@
-#![allow(unused)]
 
 use {
     super::{meta_data::MetaData, project::Project},

@@ -1,21 +1,19 @@
-#![allow(unused)]
 use {
     super::{
-        super::add_one_get,
-        super::fake_rng,
+        
+        
         super::timeline_mods::{marker::Marker, time_unit::TimeUnit},
         super::track::Track,
     },
-    fake::{Dummy, Fake, Faker},
-    serde::{Deserialize, Serialize},
+        serde::{Deserialize, Serialize},
 };
 
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub enum MarkersTrackEnum {
     Track(Track),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Markers {
     #[serde(rename = "@id")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -40,38 +38,4 @@ pub struct Markers {
     pub markers: Option<Vec<Marker>>,
 }
 
-impl Markers {
-    pub fn new_test() -> Self {
-        Self {
-            id: Some(format!("id{}", add_one_get())),
-            name: None,
-            color: None,
-            comment: None,
-            track: None,
-            time_unit: None,
-            markers: Some(vec![]),
-        }
-    }
 
-    pub fn new_fake() -> Self {
-        let o: Self = Faker.fake_with_rng(&mut fake_rng());
-        o
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use {super::Markers, quick_xml::se::to_string, std::error::Error};
-
-    #[test]
-    pub fn se_test() -> Result<(), Box<dyn Error>> {
-        let mut o = Markers::new_fake();
-
-        match to_string(&o) {
-            Ok(o) => println!("{}", o),
-            Err(err) => return Err(err.into()),
-        }
-
-        Ok(())
-    }
-}

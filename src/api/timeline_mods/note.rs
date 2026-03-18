@@ -1,13 +1,10 @@
-#![allow(unused)]
 
 use {
-    super::super::fake_rng,
     super::lanes::ArrangementTypeChoiceEnum,
-    fake::{Dummy, Fake, Faker},
     serde::{Deserialize, Serialize},
 };
 type NoteSequenceChoice = Vec<ArrangementTypeChoiceEnum>;
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Note {
     #[serde(rename = "@time")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -30,40 +27,4 @@ pub struct Note {
     #[serde(rename = "$value", default)]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub notes_sequence_choice: Option<NoteSequenceChoice>,
-}
-
-impl Note {
-    pub fn new_test() -> Self {
-        Self {
-            notes_sequence_choice: None,
-            time: None,
-            duration: None,
-            channel: None,
-            key: None,
-            vel: None,
-            rel: None,
-        }
-    }
-
-    pub fn new_fake() -> Self {
-        let o: Self = Faker.fake_with_rng(&mut fake_rng());
-        o
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use {super::Note, quick_xml::se::to_string, std::error::Error};
-
-    #[test]
-    pub fn se_test() -> Result<(), Box<dyn Error>> {
-        let mut o = Note::new_fake();
-
-        match to_string(&o) {
-            Ok(o) => println!("{}", o),
-            Err(err) => return Err(err.into()),
-        }
-
-        Ok(())
-    }
 }

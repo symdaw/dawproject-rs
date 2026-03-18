@@ -1,10 +1,9 @@
 use {
     super::eq_band_type::EqBandTypeEnum,
     super::{super::bool_parameter::BoolParameter, super::real_parameter::RealParameter},
-    fake::{Dummy, Fake, Faker},
     serde::{Deserialize, Serialize},
 };
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 enum EqBandParamsEnum {
     Freq(RealParameter),
     Gain(RealParameter),
@@ -12,45 +11,13 @@ enum EqBandParamsEnum {
     Enabled(BoolParameter),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct EqBand {
     #[serde(rename = "@type")]
-    eq_type: EqBandTypeEnum,
+    pub eq_type: EqBandTypeEnum,
     #[serde(rename = "@order")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    order: Option<i32>,
+    pub order: Option<i32>,
     #[serde(rename = "$value", default)]
-    eq_band_params: Vec<EqBandParamsEnum>,
-}
-
-impl EqBand {
-    pub fn new_test() -> Self {
-        Self {
-            eq_band_params: vec![],
-            eq_type: EqBandTypeEnum::BandPass,
-            order: None,
-        }
-    }
-
-    pub fn new_fake() -> Self {
-        let o: Self = Faker.fake_with_rng(&mut super::super::fake_rng());
-        o
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use {super::EqBand, quick_xml::se::to_string, std::error::Error};
-
-    #[test]
-    pub fn se_test() -> Result<(), Box<dyn Error>> {
-        let mut o = EqBand::new_fake();
-
-        match to_string(&o) {
-            Ok(o) => println!("{}", o),
-            Err(err) => return Err(err.into()),
-        }
-
-        Ok(())
-    }
+    pub eq_band_params: Vec<EqBandParamsEnum>,
 }

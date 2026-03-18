@@ -1,19 +1,16 @@
-#![allow(unused)]
 
 use {
-    super::super::fake_rng,
     super::{lanes::ArrangementTypeChoiceEnum, time_unit::TimeUnit, timeline::TimeLine},
-    fake::{Dummy, Fake, Faker},
     serde::{Deserialize, Serialize},
 };
 type ClipSequenceChoice = Vec<ArrangementTypeChoiceEnum>;
 
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub enum TimeLineEnum {
     TimeLine(TimeLine),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone, Dummy)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Clip {
     #[serde(rename = "@name")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -59,50 +56,4 @@ pub struct Clip {
     #[serde(rename = "@reference")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub reference: Option<String>,
-}
-
-impl Clip {
-    pub fn new_test(_content: TimeLine, time: f64, duration: f64) -> Self {
-        Clip {
-            name: None,
-            color: None,
-            comment: None,
-            notes_sequence_choice: None,
-            time,
-            duration: Some(duration),
-            content_time_unit: None,
-            play_start: None,
-            play_stop: None,
-            loop_start: None,
-            loop_end: None,
-            fade_time_unit: None,
-            fade_in_time: None,
-            fade_out_time: None,
-            reference: None,
-        }
-    }
-
-    pub fn new_fake() -> Self {
-        let o: Self = Faker.fake_with_rng(&mut fake_rng());
-        o
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use {super::super::timeline::TimeLine, std::error::Error};
-
-    use {super::Clip, quick_xml::se::to_string};
-
-    #[test]
-    pub fn se_test() -> Result<(), Box<dyn Error>> {
-        let mut o = Clip::new_test(TimeLine::new_fake(), 1.0, 0.0);
-
-        match to_string(&o) {
-            Ok(o) => println!("{}", o),
-            Err(err) => return Err(err.into()),
-        }
-
-        Ok(())
-    }
 }
