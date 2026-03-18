@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::api::InterpolationEnum;
+use crate::api::interpolation::InterpolationEnum;
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct RealPoint {
