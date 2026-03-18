@@ -10,7 +10,7 @@ pub enum TransportSequence {
 
 type TransportSequenceVec = Vec<TransportSequence>;
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Transport {
     #[serde(rename = "$value", default)]
     pub sequence: TransportSequenceVec,

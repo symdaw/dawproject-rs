@@ -19,7 +19,7 @@ pub enum ArrangementTypeChoiceEnum {
     Points(Points),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct LanesSequence {
     #[serde(rename = "$value", default)]
     pub lanes_sequence: Option<LanesSequenceChoice>,
@@ -27,7 +27,7 @@ pub struct LanesSequence {
 
 type LanesSequenceChoice = Vec<ArrangementTypeChoiceEnum>;
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Lanes {
     #[serde(rename = "@id")]
     #[serde(skip_serializing_if = "Option::is_none")]

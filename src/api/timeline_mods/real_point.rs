@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::api::interpolation::InterpolationEnum;
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct RealPoint {
     #[serde(rename = "@time")]
     #[serde(skip_serializing_if = "Option::is_none")]

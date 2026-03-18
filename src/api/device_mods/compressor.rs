@@ -17,7 +17,7 @@ pub enum CompressorParamsEnum {
 
 pub type CompressorParams = Vec<CompressorParamsEnum>;
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Compressor {
     #[serde(rename = "@id")]
     pub id: Option<String>,

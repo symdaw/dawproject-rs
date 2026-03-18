@@ -20,7 +20,7 @@ pub enum SceneSequenceEnum {
     Points(Points),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Scene {
     #[serde(rename = "@id")]
     pub id: Option<String>,

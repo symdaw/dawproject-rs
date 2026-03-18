@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct TimeSignatureParameter {
     #[serde(rename = "@name")]
     #[serde(skip_serializing_if = "Option::is_none")]

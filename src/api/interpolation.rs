@@ -7,7 +7,7 @@ pub enum InterpolationEnum {
     Linear,
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Interpolation {
     #[serde(rename = "$value", default)]
     pub interpolation_type: Vec<InterpolationEnum>,

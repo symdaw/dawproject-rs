@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use super::{note::Note, time_unit::TimeUnit};
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Notes {
     // Extends timeline
     #[serde(rename = "@id")]

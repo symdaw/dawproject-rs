@@ -17,7 +17,7 @@ pub enum MetaDataEnum {
     Comment(String),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct MetaData {
     #[serde(rename = "$value", default)]
     pub meta_data: Vec<MetaDataEnum>,

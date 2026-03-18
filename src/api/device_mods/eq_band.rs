@@ -11,7 +11,7 @@ pub enum EqBandParamsEnum {
     Enabled(BoolParameter),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct EqBand {
     #[serde(rename = "@type")]
     pub eq_type: EqBandTypeEnum,

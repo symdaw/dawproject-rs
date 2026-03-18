@@ -1,5 +1,5 @@
 use serde::{Deserialize, Serialize};
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub enum EqBandTypeEnum {
     #[serde(rename = "highPass")]
     HighPass,
@@ -12,6 +12,7 @@ pub enum EqBandTypeEnum {
     #[serde(rename = "lowShelf")]
     LowShelf,
     #[serde(rename = "bell")]
+    #[default]
     Bell,
     #[serde(rename = "@notch")]
     Notch,

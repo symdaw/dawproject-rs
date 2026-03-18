@@ -38,13 +38,13 @@ pub enum ChannelParameters {
     Sends(Option<Vec<Send>>),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Devices {
     #[serde(rename = "$value")]
     pub choice: Vec<DeviceTypes>,
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Channel {
     #[serde(rename = "@id")]
     #[serde(skip_serializing_if = "Option::is_none")]

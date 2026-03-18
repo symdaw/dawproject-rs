@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use super::unit::Unit;
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct RealParameter {
     #[serde(rename = "@id")]
     #[serde(skip_serializing_if = "Option::is_none")]

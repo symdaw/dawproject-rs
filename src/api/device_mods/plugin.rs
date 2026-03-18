@@ -2,7 +2,7 @@ use super::{device::DeviceElements, device_role::DeviceRole};
 
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Plugin {
     #[serde(rename = "@id")]
     id: Option<String>,

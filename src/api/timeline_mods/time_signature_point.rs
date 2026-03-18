@@ -8,7 +8,7 @@ pub enum TimeSignaturePointEnum {
     Denominator(i32),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct TimeSignaturePoint {
     #[serde(rename = "@time")]
     #[serde(skip_serializing_if = "Option::is_none")]

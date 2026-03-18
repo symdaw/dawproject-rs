@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 #[serde(rename_all = "lowercase")]
 pub enum Unit {
     Linear,
@@ -10,6 +10,7 @@ pub enum Unit {
     Hertz,
     Semitones,
     Seconds,
+    #[default]
     Beats,
     Bpm,
 }

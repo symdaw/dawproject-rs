@@ -3,7 +3,7 @@ use {
     serde::{Deserialize, Serialize},
 };
 type NoteSequenceChoice = Vec<ArrangementTypeChoiceEnum>;
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Note {
     #[serde(rename = "@time")]
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -12,13 +12,13 @@ pub enum TrackChannelEnum {
     Channel(Channel),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Structure {
     #[serde(rename = "$value", default)]
     pub sequence: Vec<TrackChannelEnum>,
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Project {
     #[serde(rename = "@version")]
     pub version: String,

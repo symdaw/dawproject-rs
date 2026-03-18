@@ -9,7 +9,7 @@ pub enum TimeLineEnum {
     TimeLine(TimeLine),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Clip {
     #[serde(rename = "@name")]
     #[serde(skip_serializing_if = "Option::is_none")]

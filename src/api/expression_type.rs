@@ -16,7 +16,7 @@ pub enum ExpressionTypeEnum {
     ProgramChange,
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct ExpressionType {
     #[serde(rename = "$value", default)]
     pub expression_type: Vec<ExpressionTypeEnum>,

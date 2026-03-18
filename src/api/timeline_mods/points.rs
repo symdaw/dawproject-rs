@@ -21,7 +21,7 @@ pub enum PointsSequenceEnum {
     PointType(PointsTypeEnum),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Points {
     // Extends timeline
     #[serde(rename = "@id")]

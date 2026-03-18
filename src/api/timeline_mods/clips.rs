@@ -9,7 +9,7 @@ pub enum ClipEnum {
     Clip(Clip),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Clips {
     #[serde(rename = "@id")]
     #[serde(skip_serializing_if = "Option::is_none")]

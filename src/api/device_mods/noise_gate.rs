@@ -16,7 +16,7 @@ pub enum NoiseGateParamsEnum {
 
 type NoiseGateParams = Vec<NoiseGateParamsEnum>;
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct NoiseGate {
     #[serde(rename = "@id")]
     #[serde(skip_serializing_if = "Option::is_none")]

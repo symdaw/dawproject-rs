@@ -30,7 +30,7 @@ pub enum Parameters {
     TimeSignatureParameter,
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Device {
     // Extends referenceable
     #[serde(rename = "@id")]

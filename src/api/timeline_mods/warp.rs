@@ -6,7 +6,7 @@ pub enum WarpSequenceEnum {
     ContentTime(f64),
 }
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Debug, Deserialize, Serialize, Clone, Default)]
 pub struct Warp {
     #[serde(rename = "@time")]
     pub time: f64,
