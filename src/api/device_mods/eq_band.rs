@@ -4,7 +4,7 @@ use {
     serde::{Deserialize, Serialize},
 };
 #[derive(Debug, Deserialize, Serialize, Clone)]
-enum EqBandParamsEnum {
+pub enum EqBandParamsEnum {
     Freq(RealParameter),
     Gain(RealParameter),
     Q(RealParameter),

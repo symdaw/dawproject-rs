@@ -6,7 +6,7 @@ use {
 };
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
-enum LimiterParamsEnum {
+pub enum LimiterParamsEnum {
     Attack(RealParameter),
     InputGain(RealParameter),
     OutputGain(RealParameter),

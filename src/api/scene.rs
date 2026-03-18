@@ -7,7 +7,7 @@ use {
 };
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
-enum SceneSequenceEnum {
+pub enum SceneSequenceEnum {
     Timeline(TimeLine),
     Lanes(Lanes),
     Notes(Notes),

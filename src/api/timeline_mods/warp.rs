@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 #[derive(Debug, Deserialize, Serialize, Clone)]
 #[serde(rename_all = "lowercase")]
-enum WarpSequenceEnum {
+pub enum WarpSequenceEnum {
     Time(f64),
     ContentTime(f64),
 }

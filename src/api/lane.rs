@@ -10,7 +10,7 @@ pub struct Lane {
     pub name: Option<String>,
     #[serde(rename = "@color")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub color: Option<String>, //
+    pub color: Option<String>,
     #[serde(rename = "@comment")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub comment: Option<String>,

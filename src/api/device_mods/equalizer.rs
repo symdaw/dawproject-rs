@@ -6,7 +6,7 @@ use {
 };
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
-enum EqParamsEnum {
+pub enum EqParamsEnum {
     Band(EqBand),
     InputGain(RealParameter),
     OutputGain(RealParameter),

@@ -5,7 +5,7 @@ use {
     serde::{Deserialize, Serialize},
 };
 #[derive(Debug, Deserialize, Serialize, Clone)]
-enum CompressorParamsEnum {
+pub enum CompressorParamsEnum {
     Attack(RealParameter),
     AutoMakeup(BoolParameter),
     InputGain(RealParameter),
@@ -15,7 +15,7 @@ enum CompressorParamsEnum {
     Threshold(RealParameter),
 }
 
-type CompressorParams = Vec<CompressorParamsEnum>;
+pub type CompressorParams = Vec<CompressorParamsEnum>;
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Compressor {

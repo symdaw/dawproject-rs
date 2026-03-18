@@ -11,7 +11,6 @@ repository = "https://github.com/leichak/dawproject-rs"
 readme = "README.md"
 license-file = "LICENSE"
 
-
 [dependencies]
 serde = { version = "1.0", features = ["derive"], default-features = false }
 quick-xml = { version = "0.31", features = ["serialize"] }

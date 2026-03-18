@@ -15,7 +15,7 @@ pub enum DeviceElementsEnum {
 pub type DeviceElements = Vec<DeviceElementsEnum>;
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
-enum Parameters {
+pub enum Parameters {
     #[serde(rename = "parameter")]
     Parameter,
     #[serde(rename = "realParameter")]

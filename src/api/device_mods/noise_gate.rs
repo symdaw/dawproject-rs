@@ -6,7 +6,7 @@ use {
 };
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
-enum NoiseGateParamsEnum {
+pub enum NoiseGateParamsEnum {
     Attack(RealParameter),
     Range(RealParameter),
     Ratio(RealParameter),

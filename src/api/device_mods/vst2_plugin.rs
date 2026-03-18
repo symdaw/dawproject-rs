@@ -24,7 +24,6 @@ pub struct Vst2Plugin {
     #[serde(rename = "@loaded")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub loaded: Option<bool>,
-
     #[serde(rename = "@pluginVersion")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub plugin_version: Option<String>,
