@@ -114,22 +114,13 @@ impl DawProject {
         embedded_files: HashMap<&Path, String>,
         zip_file_path: &Path,
     ) -> Result<(), Box<dyn Error>> {
-        let file = match std::fs::File::create(zip_file_path) {
-            Ok(f) => f,
-            Err(err) => return Err(err.into()),
-        };
+        let file = std::fs::File::create(zip_file_path)?;
 
         let mut zip_writer = zip::ZipWriter::new(file);
 
-        let project_xml = match Self::to_xml(ObjectType::P(project)) {
-            Ok(s) => s,
-            Err(err) => return Err(err),
-        };
+        let project_xml = Self::to_xml(ObjectType::P(project))?;
 
-        let meta_data_xml = match Self::to_xml(ObjectType::M(meta_data)) {
-            Ok(s) => s,
-            Err(err) => return Err(err),
-        };
+        let meta_data_xml = Self::to_xml(ObjectType::M(meta_data))?;
 
         match Self::add_file_to_zip_from_str(&mut zip_writer, &project_xml, PROJECT_FILE) {
             Ok(()) => (),
@@ -182,7 +173,7 @@ impl DawProject {
         content: &str,
         file_name: &str,
     ) -> Result<(), Box<dyn Error>> {
-        let name = file_name.to_string();
+        let _name = file_name.to_string();
 
         let options = FileOptions::default()
             .compression_method(zip::CompressionMethod::Stored)
@@ -235,15 +226,9 @@ impl DawProject {
             }
         }
 
-        let project: Project = match from_str(&p) {
-            Ok(p) => p,
-            Err(err) => return Err(err.into()),
-        };
+        let project: Project = from_str(&p)?;
 
-        let metadata: MetaData = match from_str(&m) {
-            Ok(m) => m,
-            Err(err) => return Err(err.into()),
-        };
+        let metadata: MetaData = from_str(&m)?;
 
         Ok((project, metadata))
     }
@@ -269,10 +254,7 @@ impl DawProject {
             }
         }
 
-        let metadata: MetaData = match from_str(&contents) {
-            Ok(p) => p,
-            Err(err) => return Err(err.into()),
-        };
+        let metadata: MetaData = from_str(&contents)?;
 
         Ok(metadata)
     }

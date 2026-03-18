@@ -2,7 +2,6 @@
 use super::{clip::Clip, time_unit::TimeUnit};
 
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct ClipSlot {

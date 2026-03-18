@@ -1,7 +1,7 @@
 
 use crate::api::FileReference;
 
-use super::{time_unit::TimeUnit, timeline::TimeLine, UpcastTimeline};
+use super::time_unit::TimeUnit;
 
 use serde::{Deserialize, Serialize};
 

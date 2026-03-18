@@ -1,6 +1,6 @@
 
 use super::{
-    application::Application, arrangement::Arrangement, mixer_role::MixerRoleEnum, scene::Scene,
+    application::Application, arrangement::Arrangement, scene::Scene,
 };
 
 use super::transport::Transport;

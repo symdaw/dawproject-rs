@@ -11,7 +11,6 @@ use {
         mixer_role::MixerRoleEnum,
         real_parameter::RealParameter,
         send::Send,
-        unit::Unit,
     },
     serde::{Deserialize, Serialize},
 };

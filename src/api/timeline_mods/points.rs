@@ -1,8 +1,7 @@
 use super::{
     super::unit::Unit, automation_target::AutomationTarget, bool_point::BoolPoint,
     enum_point::EnumPoint, integer_point::IntegerPoint, point::Point, real_point::RealPoint,
-    time_signature_point::TimeSignaturePoint, time_unit::TimeUnit, timeline::TimeLine,
-    UpcastTimeline,
+    time_signature_point::TimeSignaturePoint, time_unit::TimeUnit,
 };
 
 use serde::{Deserialize, Serialize};

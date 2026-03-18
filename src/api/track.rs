@@ -1,7 +1,7 @@
-use super::{mixer_role::MixerRoleEnum, project::TrackChannelEnum};
+use super::project::TrackChannelEnum;
 
 use {
-    super::{channel::Channel, content_type::ContentType},
+    super::content_type::ContentType,
     serde::{Deserialize, Serialize},
 };
 

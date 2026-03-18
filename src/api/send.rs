@@ -1,6 +1,6 @@
 
 use {
-    super::{real_parameter::RealParameter, send_type::SendTypeEnum, unit::Unit},
+    super::{real_parameter::RealParameter, send_type::SendTypeEnum},
     serde::{Deserialize, Serialize},
 };
 

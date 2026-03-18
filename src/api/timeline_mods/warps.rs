@@ -1,7 +1,6 @@
 use super::{
     audio::Audio, clip_slot::ClipSlot, clips::Clips, lanes::Lanes, markers::Markers, notes::Notes,
     points::Points, time_unit::TimeUnit, timeline::TimeLine, video::Video, warp::Warp,
-    UpcastTimeline,
 };
 
 use {
