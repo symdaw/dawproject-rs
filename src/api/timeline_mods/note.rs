@@ -1,4 +1,3 @@
-
 use {
     super::lanes::ArrangementTypeChoiceEnum,
     serde::{Deserialize, Serialize},

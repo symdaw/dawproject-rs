@@ -1,4 +1,3 @@
-
 use std::{error::Error, fs::File, path::Path};
 
 pub fn create_file_path_absolute_string(file_path: String) -> Result<String, Box<dyn Error>> {

@@ -1,4 +1,3 @@
-
 use super::{clip::Clip, time_unit::TimeUnit};
 
 use serde::{Deserialize, Serialize};

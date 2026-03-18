@@ -1,4 +1,3 @@
-
 use {
     super::{meta_data::MetaData, project::Project},
     quick_xml::{de::from_str, se::to_string},

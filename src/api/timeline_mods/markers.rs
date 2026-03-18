@@ -1,11 +1,9 @@
 use {
     super::{
-        
-        
         super::timeline_mods::{marker::Marker, time_unit::TimeUnit},
         super::track::Track,
     },
-        serde::{Deserialize, Serialize},
+    serde::{Deserialize, Serialize},
 };
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
@@ -37,5 +35,3 @@ pub struct Markers {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub markers: Option<Vec<Marker>>,
 }
-
-

@@ -1,4 +1,3 @@
-
 use {
     super::{lanes::ArrangementTypeChoiceEnum, time_unit::TimeUnit, timeline::TimeLine},
     serde::{Deserialize, Serialize},

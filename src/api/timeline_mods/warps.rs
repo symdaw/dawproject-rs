@@ -3,10 +3,7 @@ use super::{
     points::Points, time_unit::TimeUnit, timeline::TimeLine, video::Video, warp::Warp,
 };
 
-use {
-    
-        serde::{Deserialize, Serialize},
-};
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub enum WarpsSequenceEnum {
@@ -51,5 +48,3 @@ pub struct Warps {
     #[serde(rename = "$value", default)]
     pub warps_sequence: Option<WarpsSequence>,
 }
-
-

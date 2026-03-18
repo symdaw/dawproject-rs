@@ -1,9 +1,8 @@
-
 use super::{device::DeviceElements, device_role::DeviceRole};
 
 use {
-    super::{  super::real_parameter::RealParameter},
-        serde::{Deserialize, Serialize},
+    super::super::real_parameter::RealParameter,
+    serde::{Deserialize, Serialize},
 };
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
@@ -43,5 +42,3 @@ pub struct NoiseGate {
     #[serde(rename = "$value", default)]
     pub params: NoiseGateParams,
 }
-
-

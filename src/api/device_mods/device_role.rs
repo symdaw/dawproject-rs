@@ -10,4 +10,3 @@ pub enum DeviceRole {
     #[serde(rename = "analyzer")]
     Analyzer,
 }
-

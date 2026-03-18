@@ -1,4 +1,3 @@
-
 use super::{device::DeviceElements, device_role::DeviceRole};
 
 use serde::{Deserialize, Serialize};

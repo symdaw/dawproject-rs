@@ -1,4 +1,3 @@
-
 use serde::{Deserialize, Serialize};
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Application {
@@ -7,4 +6,3 @@ pub struct Application {
     #[serde(rename = "@version")]
     pub version: String,
 }
-

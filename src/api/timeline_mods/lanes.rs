@@ -50,4 +50,3 @@ pub struct Lanes {
     #[serde(rename = "$value", default)]
     pub lanes_sequence: Option<LanesSequenceChoice>,
 }
-

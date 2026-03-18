@@ -1,4 +1,3 @@
-
 use {
     super::super::expression_type::ExpressionTypeEnum,
     serde::{Deserialize, Serialize},

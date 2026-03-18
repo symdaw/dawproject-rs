@@ -1,4 +1,3 @@
-
 use crate::api::FileReference;
 
 use super::time_unit::TimeUnit;
@@ -39,4 +38,3 @@ pub struct Audio {
     #[serde(rename = "@sampleRate")]
     pub sample_rate: i32,
 }
-

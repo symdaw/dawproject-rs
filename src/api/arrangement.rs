@@ -1,4 +1,3 @@
-
 use {
     super::timeline_mods::{lanes::Lanes, markers::Markers, points::Points},
     serde::{Deserialize, Serialize},
@@ -31,4 +30,3 @@ pub struct Arrangement {
     #[serde(rename = "$value", default)]
     pub sequence: Option<ArrangementSequence>,
 }
-

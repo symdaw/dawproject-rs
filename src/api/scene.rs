@@ -1,9 +1,7 @@
 use {
-    super::{
-        timeline_mods::{
-            audio::Audio, clip_slot::ClipSlot, clips::Clips, lanes::Lanes, markers::Markers,
-            notes::Notes, points::Points, timeline::TimeLine, video::Video, warps::Warps,
-        },
+    super::timeline_mods::{
+        audio::Audio, clip_slot::ClipSlot, clips::Clips, lanes::Lanes, markers::Markers,
+        notes::Notes, points::Points, timeline::TimeLine, video::Video, warps::Warps,
     },
     serde::{Deserialize, Serialize},
 };
@@ -35,4 +33,3 @@ pub struct Scene {
     #[serde(rename = "$value", default)]
     pub content: Option<SceneSequenceEnum>,
 }
-

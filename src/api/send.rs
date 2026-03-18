@@ -1,4 +1,3 @@
-
 use {
     super::{real_parameter::RealParameter, send_type::SendTypeEnum},
     serde::{Deserialize, Serialize},

@@ -1,8 +1,8 @@
 use super::{device::DeviceElements, device_role::DeviceRole};
 
 use {
-    super::{  super::real_parameter::RealParameter},
-        serde::{Deserialize, Serialize},
+    super::super::real_parameter::RealParameter,
+    serde::{Deserialize, Serialize},
 };
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
@@ -42,5 +42,3 @@ pub struct Limiter {
     #[serde(rename = "$value", default)]
     pub params: LimiterParams,
 }
-
-

@@ -1,7 +1,4 @@
-
-use super::{
-    application::Application, arrangement::Arrangement, scene::Scene,
-};
+use super::{application::Application, arrangement::Arrangement, scene::Scene};
 
 use super::transport::Transport;
 

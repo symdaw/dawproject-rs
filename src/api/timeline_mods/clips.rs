@@ -1,4 +1,3 @@
-
 use super::clip::Clip;
 
 use serde::{Deserialize, Serialize};

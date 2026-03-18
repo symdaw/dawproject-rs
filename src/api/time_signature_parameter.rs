@@ -22,4 +22,3 @@ pub struct TimeSignatureParameter {
     #[serde(rename = "@denominator")]
     pub denominator: i32,
 }
-
